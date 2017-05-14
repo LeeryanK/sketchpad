@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/sketchpad/"/>
     <title>Sketchpad</title>
+    <link rel="stylesheet" href="app.css"/>
+    <script src="jscolor.min.js"></script>
   </head>
   
   <body>
+    <canvas id="main-canvas"></canvas>
+    <div id="menu">
+      <div id="select-frame" class="btn">Select Frame</div>
+      <div id="new-frame" class="btn">New Frame</div>
+      <div id="delete-frame" class="btn">Delete Frame</div>
+      <input class="jscolor {closable:true,closeText:'Close'}" value="ff3300"/>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
