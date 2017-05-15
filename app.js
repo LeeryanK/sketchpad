@@ -4,7 +4,7 @@
   var frameSelectBtn = document.getElementById('change-frame');
   var addFrameBtn = document.getElementById('new-frame');
   var deleteFrameBtn = document.getElementById('delete-frame');
-  var downloadFrameBtn = document.getElementsById('download-frame');
+  var downloadFrameBtn = document.getElementById('download-frame');
   var colorPicker = document.getElementById('color-picker');
   var thicknessSlider = document.getElementById('thickness-slider');
   
