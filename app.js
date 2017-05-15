@@ -30,6 +30,8 @@
     
     this.mainCanvas.addEventListener('touchstart', Sketchpad.Handlers.onTouchStart.bind(this));
     this.mainCanvas.addEventListener('touchmove', Sketchpad.Handlers.onTouchMove.bind(this));
+    this.mainCanvas.addEventListener('mousedown', Sketchpad.Handlers.onMouseDown.bind(this));
+    this.mainCanvas.addEventListener('mousemove', Sketchpad.Handlers.onMouseMove.bind(this));
     
     this.addFrameBtn.addEventListener('click', Sketchpad.Handlers.addFrame.bind(this));
     this.changeFrameBtn.addEventListener('click', Sketchpad.Handlers.Handlers.openChangeFrameMenu.bind(this));
@@ -47,6 +49,8 @@
       var ctx = canvas.getContext('2d');
       canvas.width = Sketchpad.config.WIDTH;
       canvas.height = Sketchpad.config.HEIGHT;
+      canvas.style.width = Sketchpad.config.PREVIEW_WIDTH + 'px';
+      canvas.style.height = Sketchpad.config.PREVIEW_HEIGHT + 'px';
       canvas.setAttribute('data-frame-number', i);
       ctx.fillStyle = 'white';
       ctx.fillRect(0, 0, Sketchpad.config.WIDTH, Sketchpad.config.HEIGHT);
@@ -81,17 +85,34 @@
     this.selectFrameMenu.style.display = 'none';
   };
   
+  Sketchpad.config = {
+    WIDTH: 720,
+    HEIGHT: 540,
+    PREVIEW_WIDTH: 120,
+    PREVIEW_HEIGHT: 90
+  };
+  
   Sketchpad.Handlers = {
     onTouchStart: function(e) {
       var firstTouch = e.touches[0];
-      var newPath = new Path(firstTouch.pageX, firstTouch.pageY, this.currentColor, this.currentThickness);
+      var newPath = new Path(firstTouch.clientX, firstTouch.clientY, this.currentColor, this.currentThickness);
       newPath.renderLatestVertex(this.ctx);
       this.currentFrame.addPath(newPath);
     },
     onTouchMove: function(e) {
       var firstTouch = e.touches[0];
       var latestPath = this.currentFrame.getLatestPath();
-      latestPath.addVertex(firstTouch.pageX, firstTouch.pageY);
+      latestPath.addVertex(firstTouch.clientX, firstTouch.clientY);
+      latestPath.renderLatestVertex(this.ctx);
+    },
+    onMouseDown: function(e) {
+      var newPath = newPath(e.clientX, e.clientY, this.currentColor, this.currentThickness);
+      newPath.renderLatestVertex(this.ctx);
+      this.currentFrame.addPath(newPath);
+    },
+    onMouseMove: function(e) {
+      var latestPath = this.currentFrame.getLatestPath();
+      latestPath.addVertex(e.clientX, e.clientY);
       latestPath.renderLatestVertex(this.ctx);
     },
     
