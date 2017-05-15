@@ -1,3 +1,7 @@
+body {
+  background-color: #3d3d3d;
+}
+
 #main-canvas {
   margin: 0;
   border: 0;
@@ -15,6 +19,7 @@
   margin: 0;
   border: 0;
   padding: 0;
+  background-color: white;
 }
 
 .btn {
