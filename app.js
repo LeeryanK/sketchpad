@@ -23,7 +23,7 @@
     this.changeFrameBtn = changeFrameBtn;
     this.addFrameBtn = addFrameBtn;
     this.deleteFrameBtn = deleteFrameBtn;
-    this.downloadFrameBtn downloadFrameBtn;
+    this.downloadFrameBtn = downloadFrameBtn;
     this.colorPicker = colorPicker;
     this.thicknessSlider = thicknessSlider;
     this.frameSelector = frameSelector;
