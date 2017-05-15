@@ -1,4 +1,5 @@
 (function() {
+  console.log('initializing sketchpad...');
   var mainCanvas = document.getElementById('main-canvas');
   var frameSelector = document.getElementById('frame-selector');
   var frameSelectBtn = document.getElementById('change-frame');
