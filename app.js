@@ -2,7 +2,7 @@
   console.log('initializing sketchpad...');
   var mainCanvas = document.getElementById('main-canvas');
   var frameSelector = document.getElementById('frame-selector');
-  var frameSelectBtn = document.getElementById('change-frame');
+  var changeFrameBtn = document.getElementById('change-frame');
   var addFrameBtn = document.getElementById('new-frame');
   var deleteFrameBtn = document.getElementById('delete-frame');
   var downloadFrameBtn = document.getElementById('download-frame');
@@ -234,4 +234,6 @@
     this.x = x;
     this.y = y;
   }
+  
+  new Sketchpad(mainCanvas, changeFrameBtn, addFrameBtn, deleteFrameBtn, downloadFrameBtn, colorPicker, thicknessSlider, frameSelector);
 })();
