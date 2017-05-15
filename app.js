@@ -28,6 +28,12 @@
     this.thicknessSlider = thicknessSlider;
     this.frameSelector = frameSelector;
     
+    this.mainCanvas.width = Sketchpad.config.WIDTH;
+    this.mainCanvas.height = Sketchpad.config.HEIGHT;
+    this.ctx = this.mainCanvas.getContext('2d');
+    this.ctx.fillStyle = '#FFFFFF';
+    this.ctx.fillRect(0, 0, Sketchpad.config.WIDTH, Sketchpad.config.HEIGHT);
+    
     this.mainCanvas.addEventListener('touchstart', Sketchpad.Handlers.onTouchStart.bind(this));
     this.mainCanvas.addEventListener('touchmove', Sketchpad.Handlers.onTouchMove.bind(this));
     this.mainCanvas.addEventListener('mousedown', Sketchpad.Handlers.onMouseDown.bind(this));
