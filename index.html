@@ -10,10 +10,14 @@
   <body>
     <canvas id="main-canvas"></canvas>
     <div id="menu">
-      <div id="select-frame" class="btn">Select Frame</div>
+      <div id="change-frame" class="btn">Change Frame</div>
       <div id="new-frame" class="btn">New Frame</div>
       <div id="delete-frame" class="btn">Delete Frame</div>
+      <div id="download-frame" class="btn">Download Current Frame</div>
+      <div id="frame-selector"></div>
       <input id="color-picker" class="jscolor {closable:true,closeText:'Close',mode:'HSV'}" value="ff3300"/>
+      Thickness:
+      <input id="thickness-slider" type="range" min="1" max="20"/>
     </div>
     <script src="app.js"></script>
   </body>
