@@ -1,12 +1,12 @@
 (function() {
   var mainCanvas = document.getElementById('main-canvas');
-  var frameSelector = document.getElementById('frame-selector'); // TODO: Add corresponding HTML element
-  var frameSelectBtn = document.getElementById('change-frame'); // TODO: Change id to 'change-frame'
+  var frameSelector = document.getElementById('frame-selector');
+  var frameSelectBtn = document.getElementById('change-frame');
   var addFrameBtn = document.getElementById('new-frame');
   var deleteFrameBtn = document.getElementById('delete-frame');
-  var downloadFrameBtn = document.getElementsById('download-frame'); // TODO: Add corresponding HTML element
+  var downloadFrameBtn = document.getElementsById('download-frame');
   var colorPicker = document.getElementById('color-picker');
-  var thicknessSlider = document.getElementById('thickness-slider'); // TODO: Add corresponding HTML element
+  var thicknessSlider = document.getElementById('thickness-slider');
   
   function Sketchpad(mainCanvas, changeFrameBtn, addFrameBtn, deleteFrameBtn, downloadFrameBtn, colorPicker, thicknessSlider, frameSelector) {
     if (Sketchpad.instance_) {
